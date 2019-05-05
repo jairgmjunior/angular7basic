@@ -12,6 +12,8 @@ export class EventBindingComponent implements OnInit {
   spinnerMode = "determinate";
   btnEnable = true;
   modifica = 0;
+  selectDisable = false;
+  selectOption = 1;
 
   constructor() { }
 
@@ -41,5 +43,16 @@ export class EventBindingComponent implements OnInit {
       this.btnEnable = true;
       this.spinnerMode = "determinate";
     }, 3000);
+  }
+
+  chkChange(event){
+    
+    this.selectDisable = event.checked; 
+    console.log(event);
+  }
+
+  carsSelection(event){
+    console.log(event);
+    this.selectOption = event.value;
   }
 }

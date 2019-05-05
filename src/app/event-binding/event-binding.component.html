@@ -17,5 +17,32 @@
         [mode]="spinnerMode"
         [value]="modifica">
     </mat-progress-spinner>
+</section>
 
+<section>
+  <mat-card>
+    <p>
+      <mat-checkbox color="warn" (change)="chkChange($event)">Disable / Enable</mat-checkbox>
+    </p>
+    <mat-card-content>
+          <mat-form-field>
+              <mat-label>Cars</mat-label>
+              <mat-select matNativeControl required
+                [disabled]="selectDisable"
+                (selectionChange)="carsSelection($event)"
+              >
+                <mat-option value="1">Volvo</mat-option>
+                <mat-option value="2">Saab</mat-option>
+                <mat-option value="3">Mercedes</mat-option>
+                <mat-option value="4">Audi</mat-option>
+              </mat-select>
+            </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Selected Option {{selectOption}}</p>
+    </mat-card-actions>
+  </mat-card>
+ 
+
+  
 </section>
